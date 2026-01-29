@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Кто ты из ПО2307?</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<h1>Кто ты из группы ПО2307?</h1>
+
+<p>Вопрос <span th:text="${index}"></span> из <span th:text="${total}"></span></p>
+
+<h2 th:text="${question.text}"></h2>
+
+<form action="/answer" method="post">
+    <div th:each="opt, i : ${question.options}">
+        <button type="submit" name="option" th:value="${i.index}">
+            <span th:text="${opt.text}"></span>
+        </button>
+    </div>
+</form>
+
+<script th:src="@{/app.js}"></script>
+</body>
+</html>

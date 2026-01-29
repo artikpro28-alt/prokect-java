@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+</head>
+<body>
+
+<h1>Результат</h1>
+<h2 th:switch="${person.name()}">
+    <span th:case="'ANSAR'">Ты — Мурат Ансар 😄 (аниме, юмор, Луффи)</span>
+    <span th:case="'ARTUR'">Ты — Рудюк Артур 🚗 (машины и практика)</span>
+    <span th:case="'AMIR'">Ты — Турганов Амир 🤓 (душный, но полезный)</span>
+    <span th:case="'ALEM'">Ты — Балтабек Алем 🧠 (анализ и будущее)</span>
+</h2>
+
+
+<a href="/">Пройти ещё раз</a>
+
+<script th:src="@{/app.js}"></script>
+</body>
+</html>
